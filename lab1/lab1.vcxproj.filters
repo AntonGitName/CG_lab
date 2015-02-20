@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Src\Library\cglApp.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Library\cglD3D.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Library\cglTimer.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\main.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\myApp.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Library\cglD3D.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Library\cglTimer.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Library\cglApp.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\myApp.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Application">
+      <UniqueIdentifier>{6f9bf7f7-3e79-4051-8010-772f68b01c7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{d0c24a73-41ce-4b60-ac39-7e1b185fa536}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
