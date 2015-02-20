@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5AA8E80B-5156-4C91-B883-74857D01181F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DiD3DBase9</RootNamespace>
+    <RootNamespace>lab4_2</RootNamespace>
     <ProjectName>lab4_2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
