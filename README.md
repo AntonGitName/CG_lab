@@ -12,4 +12,5 @@ Short description of the labs:
 More information and better descriptions of the tasks you can find [here](https://www.sites.google.com/site/primatcg/laboratornye-1/spisok-zadanij).
 
 Requirements and how to build:
+
 You need VS 2013 and DirectX 9 to build these projects. All you have to do is just open the solution file (CG_labs.sln).
