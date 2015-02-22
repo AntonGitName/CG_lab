@@ -30,9 +30,9 @@ myApp::myApp(int nW, int nH, void* hInst, int nCmdShow)
     : cglApp(nW, nH, hInst, nCmdShow)
     , m_nPrevMouseX(-100)
     , m_nPrevMouseY(-100)
-    , m_mipmapIndex(0)
-    , m_minIndex(0)
-    , m_magIndex(0)
+    , m_mipmapIndex(1)
+    , m_minIndex(1)
+    , m_magIndex(1)
 {
     for (int i = 0; i < MAX_KEYS; i++)
         m_keysPressed[i] = false;
@@ -49,6 +49,8 @@ myApp::myApp(int nW, int nH, void* hInst, int nCmdShow)
     createSnake();
 
     m_d3ddev->SetSamplerState(0, D3DSAMP_MIPFILTER, s_mipmap[m_mipmapIndex]);
+    m_d3ddev->SetSamplerState(0, D3DSAMP_MINFILTER, s_minmag[m_minIndex]);
+    m_d3ddev->SetSamplerState(0, D3DSAMP_MAGFILTER, s_minmag[m_magIndex]);
 }
 
 bool myApp::processInput(unsigned int nMsg, int wParam, long lParam)
@@ -203,10 +205,10 @@ void myApp::createSnake()
 {
     const int n = 32;
     const float aTranslate = 0.1f;
-    const float fTranslate = 4.5f;
+    const float fTranslate = 5.5f;
     const float radius = 0.5f;
     const float length = 0.2f;
-    const float angleShift = D3DX_PI / 6;
+    const float angleShift = - D3DX_PI / 6;
 
     std::vector<SPTranform> tmp;
     tmp.push_back(std::make_shared<TranslateSinusZMove>(aTranslate, fTranslate, 0.0f));
@@ -218,7 +220,7 @@ void myApp::createSnake()
     for (int i = 1; i < n; ++i)
     {
         std::vector<SPTranform> tmp;
-        tmp.push_back(std::make_shared<RotateY>(0.017f));
+        tmp.push_back(std::make_shared<RotateY>(0.018f));
         tmp.push_back(std::make_shared<TranslateSinusZMove>(aTranslate, fTranslate, i * angleShift));
         builder.addBone(snakeRadius2(radius, i, n), snakeRadius2(radius, i + 1, n), length, COLORS[i % 2], std::make_shared<CompositeTransformation>(tmp));
     }
